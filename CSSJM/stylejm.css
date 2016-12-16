@@ -1,0 +1,262 @@
+html{
+	font-size: 14px;/*rem是相对于html的font-size*/
+	background-color: whitesmoke;
+}
+
+/**
+	标签和类样式设置
+*/
+h1{
+	padding-left: 2rem;
+}
+section.css-skills{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: floralwhite;
+	padding-left: 2rem;
+	overflow: hidden;
+}
+section.css-skills div.skills-parts{
+	float: left;
+}
+section.css-skills div.skills-parts:nth-child(n+1){
+	margin-right: 2em;/*margin尽量用right 自适应强*/
+}
+/*图形中显示代码*/
+section.css-skills div.skills-parts>p{
+	display: flex;
+	width: 20em;
+	height: 20em;
+	background: darkseagreen
+}
+section.css-skills div.skills-parts>p>code{
+	margin: auto;
+}
+/*代码块*/
+section.css-skills div.skills-parts p.css-skills-code{
+	display: block;
+	width: auto;
+	height: auto;
+	border: 1px solid gray;
+	background-color: tan;
+	padding: 2em 3em;
+}
+section.css-skills div.skills-parts p.css-skills-code code{
+	display: block;
+	margin-top: 1em;
+	margin-left: 2em;
+}
+
+
+
+/*1 半透明边框*/
+section#css-skills-1 p{
+	border: 10px solid hsla(0,0%,100%,.5);
+	background: #58a;
+}
+
+div#css-skills-1-2 p{
+	background-clip: padding-box;
+}
+
+/*2 多重边框*/
+section#css-skills-2 p{
+	box-shadow: 0 0 0 10px #655,
+				0 0 0 15px cadetblue;
+	margin: 2em 1em;/*shadow不占位*/
+}
+
+div#css-skills-2-2 p{
+	box-shadow: none;
+	margin: 0;
+	border: 10px solid #655;
+	outline: 5px solid cadetblue;
+}
+
+/*3 灵活的背景定位*/
+section#css-skills-3 p{
+	width: 25em;
+	height: 25em;
+	background: url(images/css-skills-3-1.jpg) no-repeat bottom right #58a;
+	background-position: right 20px bottom 10px;
+}
+div#css-skills-3-2 p{
+	width: 23em;
+	height: 23em;
+	padding: 1em;
+	background: url(images/css-skills-3-1.jpg) no-repeat bottom right #58a;
+	background-origin: content-box;
+}
+div#css-skills-3-3 p{
+	background: url(images/css-skills-3-1.jpg) no-repeat #58a;
+	background-position: calc(100% - 20px) calc(100% - 10px);
+}
+
+/*4 边框内圆角*/
+div#css-skills-4-1 div#css-skills-show-4-1{
+	background: #655;
+	padding: .8em;
+}
+div#css-skills-4-1 div#css-skills-show-4-1>div{
+	background: tan;
+	border-radius: .8em;
+	padding: 1em;
+}
+div#css-skills-4-2 p{
+	background: tan;
+	border-radius: .8em;
+	padding: 1em;
+	box-shadow: 0 0 0 .6em #655;
+	outline: .6em solid #655;/*outline和box-shadow一样不占位,不响应鼠标事件*/
+	margin: 1.6em .6em;
+}
+
+/*5 条纹背景*/
+section#css-skills-5 p>code{
+	background-color: tan;
+	padding: .6em;
+}
+div#css-skills-5-1 p{
+	background: linear-gradient(#EEDC82 50%,#58a 0);/*只需两个色标 头尾省略*/
+	background-size: 100% 30px;
+}
+div#css-skills-5-2 p{
+	background: linear-gradient(90deg,#EEDC82 50%,#58a 0);
+	background-size: 30px 100%;
+}
+div#css-skills-5-3 p{
+	background: linear-gradient(45deg,#EEDC82 25%,#58a 0,#58a 50%,
+				  #EEDC82 0,#EEDC82 75%,#58a 0);
+	background-size: 40px 40px;
+}
+div#css-skills-5-4 p{
+	width: 20rem;
+	height: 20rem;
+	background:	repeating-linear-gradient(60deg,
+				  #EEDC82,#EEDC82 15px,#58a 0,#58a 30px);/*需要四个色标（头尾不能省略）*/
+	/*chrome默认font-size小于12px无效 实际为12px*/
+	font-size: .8em;
+}
+div#css-skills-5-5 p{
+	width: 20rem;/*宽度一致 更能自适应布局*/
+	height: 20rem;
+	background: #58a;
+	background-image: repeating-linear-gradient(60deg,
+						transparent, transparent 15px,
+						hsla(0,0%,100%,.2) 0,
+						hsla(0,0%,100%,.2) 30px);
+	font-size: .8em;
+}
+
+/*半透明黑色用于加深 半透明白色用于浅化*/
+
+/*6 复杂的背景图案*/   
+section#css-skills-6 p>code{
+	background-color: tan;
+	padding: .6em;
+}
+div#css-skills-6-1 p{
+	background: #58a;
+	background-image: 	linear-gradient(white 1px,transparent 0),
+						linear-gradient(90deg,white 1px,transparent 0);
+	background-size: 30px 30px;
+}
+div#css-skills-6-2 p{
+	background: #655;
+	background-image: 	radial-gradient(tan 20%,transparent 0),
+						radial-gradient(tan 20%,transparent 0);
+	background-size: 30px 30px;
+	background-position: 0 0,15px 15px;
+}
+div#css-skills-show-6-3{
+	width: 100%;
+	height: 5em;
+	background: #eee;
+	background-image: linear-gradient(45deg,rgba(0,0,0,.25) 25%,
+						transparent 0, transparent 75%,rgba(0,0,0,.25) 0),
+					  linear-gradient(45deg,rgba(0,0,0,.25) 25%,
+						transparent 0, transparent 75%,rgba(0,0,0,.25) 0);
+	background-size: 30px 30px;
+	background-position: 0 0,15px 15px;
+}
+p#css-skills-code-6-3{
+	padding: .5em;
+}
+/*换行符"\" 在前面最好加空格" \" 否则容易出现歧义，如' "\ '就会有错误*/
+div#css-skills-show-6-4{
+	width: 100%;
+	height: 5em;
+	background: #eee url('data:image/svg+xml,\
+	<svg xmlns="http://www.w3.org/2000/svg" \
+		width="100" height="100" \
+		fill-opacity=".25"> \
+	<rect x="50" width="50" height="50"/> \
+	<rect y="50" width="50" height="50"/> \
+	</svg>');
+	background-size: 30px 30px;
+}
+p#css-skills-code-6-4{
+	padding: 1.05em;
+}
+
+/*7 伪随机背景*/
+div#css-skills-show-7-1{
+	width: 100%;
+	height: 5em;
+	background:hsl(20,40%,90%);
+	background-image: 	linear-gradient(90deg,#58a 3px,transparent 0),
+						linear-gradient(90deg,#EEDC82 5px,transparent 0),
+						linear-gradient(90deg,#655 7px,transparent 0);
+	background-size: 11px 100%, 13px 100%, 17px 100%;
+}
+
+/*8 连续的图像边框*/
+div#css-skills-8-1 p{
+	border: 1em solid transparent;
+	background: linear-gradient(tan,tan) padding-box,/*origin和clip都是padding-box*/
+				url(./images/stone-art.png) border-box 0 / cover ;
+}
+div#css-skills-show-8-2{
+	height: 5em;
+	border: .8em solid transparent;
+	background: linear-gradient(white,white) padding-box,
+				repeating-linear-gradient(135deg,red 0,red .5em,
+					transparent 0,transparent 1em,#58a 0,#58a 1.5em,
+					transparent 0,transparent 2em) border-box;
+}
+p#css-skills-code-8-2{
+	padding: 1.5em;
+}
+div#css-skills-show-8-3{
+	height: 5em;
+	border: .8em solid transparent;/*生成的图像大小为元素大小 切割后刚好只剩边框 若为本地图像 大小则不能自适应*/
+	border-image: 11 repeating-linear-gradient(135deg,red 0,red .5em,
+						transparent 0,transparent 1em,#58a 0,#58a 1.5em,
+						transparent 0,transparent 2em);/*此处默认在border-box内生成图像*/
+}
+
+@keyframes ants{
+	to{background-position: 100%;}
+}
+div#css-skills-show-8-4{/*设置background 颜色要放最后一层 否则报错 颜色也可以设置clip属性与图像一样 如yellow border-box;*/
+	height: 5em;
+	border: 1px solid transparent;
+	background: linear-gradient(white,white) padding-box,
+					repeating-linear-gradient(135deg, black 0,black 25%,white 0,white 50%) 0 / .6em .6em;
+	animation: ants 12s linear infinite;				
+}
+p#css-skills-code-8-4{
+	padding: 1em;
+}
+/*font-size的em相对于父元素(其实也是本身继承值) 其余的相对于本身的font-size*/
+div#css-skills-show-8-5{
+	font-weight: bold;
+	padding: 1em;
+	border-top: .2em solid transparent;
+	border-image: 100% 0 0 linear-gradient(90deg,currentColor 25%,transparent 0);
+}
+p#css-skills-code-8-5{
+	padding: 4.3em 1em;
+	margin-top: 3em;
+}
+

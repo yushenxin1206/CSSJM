@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>css揭秘</title>
+		<link href="stylejm.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<h1> CSS揭秘——47种css技巧 </h1>
+		</header>
+		
+		<hr /><!--这些void标签在浏览器中都会被解析成标准的html标签如：<hr> -->
+		
+		<section class="css-skills" id="css-skills-1">
+			<h2>1 半透明边框</h2>
+			<div id="css-skills-1-1" class="skills-parts">
+				<h3>背景会通过半透明边框透上来</h3>
+				<p>
+					<code>
+						border: 10px solid hsla(0,0%,100%,.5);<br />
+						background: #58a;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-1-2" class="skills-parts">
+				<h3>使用background-clip属性</h3>
+				<p>
+					<code>
+						border: 10px solid hsla(0,0%,100%,.5);<br />
+						background: #58a;<br />
+						background-clip: padding-box;
+					</code>
+				</p>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-2">
+			<h2>2 多重边框</h2>
+			<div id="css-skills-2-1" class="skills-parts">
+				<h3>box-shadow方案</h3>
+				<p>
+					<code>
+						background: darkseagreen;<br />
+						box-shadow: 0 0 0 10px #655,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 0 0 15px cadetblue;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-2-2" class="skills-parts">
+				<h3>outline方案</h3>
+				<p>
+					<code>
+						background: darkseagreen;<br />
+						border: 10px solid #655;<br />
+						outline: 5px solid cadetblue;
+					</code>
+				</p>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-3">
+			<h2>3 灵活的背景定位</h2>
+			<div id="css-skills-3-1" class="skills-parts">
+				<h3>background-position的扩展语法方案</h3>
+				<p>
+					<code>
+						background: url(images/css-skills-3-1.jpg)<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no-repeat bottom right #58a;<br />
+						background-position: right 20px bottom 10px;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-3-2" class="skills-parts">
+				<h3>background-origin方案</h3>
+				<p>
+					<code>
+						padding: 1em;<br />
+						background: url(images/css-skills-3-1.jpg)<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no-repeat bottom right #58a;<br />
+						background-origin: content-box;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-3-3" class="skills-parts">
+				<h3>calc()方案</h3>
+				<p>
+					<code>
+						background: url(images/css-skills-3-1.jpg)<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no-repeat #58a;<br />
+						background-position: calc(100% - 20px) <br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; calc(100% - 10px);
+					</code>
+				</p>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-4">
+			<h2>4 边框内圆角</h2>
+			<div id="css-skills-4-1" class="skills-parts">
+				<h3>两个元素实现</h3>
+				<div id="css-skills-show-4-1" class="css-skills-show">
+					<div>
+						两层div嵌套<br />
+						外层id：css-skills-4-1-wrap
+					</div>
+				</div>
+				<p class="css-skills-code" id="css-skills-code-4-1" >
+					css代码：<br />
+					<code>
+						div#css-skills-4-1-wrap{<br />
+							&nbsp;&nbsp;background: #655;<br />
+							&nbsp;&nbsp;padding: .8em;<br />
+						}<br />
+						div#css-skills-4-1-wrap>div{<br />
+							&nbsp;&nbsp;background: tan;<br />
+							&nbsp;&nbsp;border-radius: .8em;<br />
+							&nbsp;&nbsp;padding: 1em;<br />
+						}
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-4-2" class="skills-parts">
+				<h3>一个元素实现</h3>
+				<p>
+					<code>
+						background: tan;<br />
+						border-radius: .8em;<br />
+						padding: 1em;<br />
+						box-shadow: 0 0 0 .6em #655;<br />
+						outline: .6em solid #655;
+					</code>
+				</p>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-5">
+			<h2>5 条纹背景</h2>
+			<div id="css-skills-5-1" class="skills-parts">
+				<h3>水平条纹</h3>
+				<p>
+					<code>
+						background: linear-gradient(<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#EEDC82 30%,#58a 0);<br />
+						background-size: 100% 30px;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-5-2" class="skills-parts">
+				<h3>垂直条纹</h3>
+				<p>
+					<code>
+						background: linear-gradient(90deg,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#EEDC82 30%,#58a 0);<br />
+						background-size: 100% 30px;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-5-3" class="skills-parts">
+				<h3>斜向条纹</h3>
+				<p>
+					<code>
+						background: linear-gradient(45deg,<br />
+						&nbsp;&nbsp;&nbsp;#EEDC82 25%,#58a 0,#58a 50%,<br />
+						&nbsp;&nbsp;&nbsp;#EEDC82 0,#EEDC82 75%,#58a 0);<br />
+						background-size:40px 40px;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-5-4" class="skills-parts">
+				<h3>更好的斜向条纹</h3>
+				<p>
+					<code>
+						background: repeating-linear-gradient(<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60deg,#EEDC82,#EEDC82 15px,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#58a 0,#58a 30px);
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-5-5" class="skills-parts">
+				<h3>灵活的同色系条纹</h3>
+				<p>
+					<code>
+						background:#58a;<br />
+						background-image: repeating-linear-<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gradient(60deg,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent 15px,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hsla(0,0%,100%,.2) 0,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hsla(0,0%,100%,.2) 30px);
+					</code>
+				</p>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-6">
+			<h2>6 复杂的背景图案</h2>
+			<div id="css-skills-6-1" class="skills-parts">
+				<h3>网格</h3>
+				<p>
+					<code>
+						background: #58a;<br />
+						background-image: linear-gradient(<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;white 1px,transparent 0),<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(90deg,white<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1px,transparent 0);<br />
+						background-size: 30px 30px;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-6-2" class="skills-parts">
+				<h3>波点</h3>
+				<p>
+					<code>
+						background: #655;<br />
+						background-image: radial-gradient(<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tan 20%,transparent 0),<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radial-gradient(tan 20%,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent 0);<br />
+						background-size: 30px 30px;<br />
+						background-position:0 0,15px 15px;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-6-3" class="skills-parts">
+				<h3>棋盘</h3>
+				<div id="css-skills-show-6-3" class="css-skills-show">
+					
+				</div>
+				<p class="css-skills-code" id="css-skills-code-6-3" >
+					css代码：<br />
+					<code>
+						background: #eee;<br />
+						background-image: linear-gradient(45deg,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(0,0,0,.25) 25%,transparent 0,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent 75%,rgba(0,0,0,.25) 0),<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(45deg,rgba(0,0,0,.25) 25%,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent 0, transparent 75%,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(0,0,0,.25) 0);<br />
+						background-size:30px 30px;<br />
+						background-position:0 0,15px 15px;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-6-4" class="skills-parts">
+				<h3>SVG棋盘</h3>
+				<div id="css-skills-show-6-4" class="css-skills-show">
+					
+				</div>
+				<p class="css-skills-code" id="css-skills-code-6-4" >
+					css代码：<br />
+					<code>
+						background:#eee url('data:image/svg+xml,\<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg xmlns="http://www.w3.org/2000/svg" \<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width="100" height="100" \<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill-opacity=".25"&gt; \<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rect x="50" width="50" height="50"/&gt;\<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rect y="50" width="50" height="50"/&gt; \<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;');<br />
+						background-size:30px 30px;
+					</code>
+				</p>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-7">
+			<h2>7 伪随机背景</h2>
+			<div id="css-skills-7-1" class="skills-parts">
+				<h3>蝉原则</h3>
+				<div id="css-skills-show-7-1" class="css-skills-show">
+				</div>
+				<p class="css-skills-code" id="css-skills-code-7-1" >
+					css代码：<br />
+					<code>
+						width: 100%;<br />
+						height: 5em;<br />
+						background:hsl(20,40%,90%);<br />
+						background-image: 	linear-gradient(90deg,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#58a 3px,transparent 0),<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(90deg,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#EEDC82 5px,transparent 0),<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(90deg,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#655 7px,transparent 0);<br />
+						background-size: 11px 100%, 13px 100%, 17px 100%;
+					</code>
+				</p>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-8">
+			<h2>8 连续的图像边框</h2>
+			<div id="css-skills-8-1" class="skills-parts">
+				<h3>线性渐变加背景图</h3>
+				<p>
+					<code>
+						border: 1em solid transparent;<br />
+						background: linear-gradient(tan,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;tan) padding-box,<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;url(./images/stone-art.png) <br />
+						&nbsp;&nbsp;&nbsp;&nbsp;border-box 0 / cover ;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-8-2" class="skills-parts">
+				<h3>老式信封 1</h3>
+				<div id="css-skills-show-8-2" class="css-skills-show">
+				</div>
+				<p class="css-skills-code" id="css-skills-code-8-2" >
+					css代码：<br />
+					<code>
+						border: .8em solid transparent;<br />
+						background: linear-gradient(white,<br />
+						&nbsp;&nbsp;white) padding-box,<br />
+						&nbsp;&nbsp;repeating-linear-gradient(135deg,<br />
+						&nbsp;&nbsp;red 0,red .5em,transparent 0,<br />
+						&nbsp;&nbsp;transparent 1em,#58a 0,<br />
+						&nbsp;&nbsp;#58a 1.5em,transparent 0,<br />
+						&nbsp;&nbsp;transparent 2em) border-box;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-8-3" class="skills-parts">
+				<h3>老式信封 2</h3>
+				<div id="css-skills-show-8-3" class="css-skills-show">
+				</div>
+				<p class="css-skills-code" id="css-skills-code-8-3" >
+					css代码：<br />
+					<code>
+						border: .8em solid transparent;<br />
+						background: 11 repeating-linear-<br />
+						&nbsp;&nbsp;gradient(135deg,red 0,red <br />
+						&nbsp;&nbsp;.5em,transparent 0,<br />
+						&nbsp;&nbsp;transparent 1em,#58a 0,<br />
+						&nbsp;&nbsp;#58a 1.5em,transparent 0,<br />
+						&nbsp;&nbsp;transparent 2em);
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-8-4" class="skills-parts">
+				<h3>蚂蚁行军框</h3>
+				<div id="css-skills-show-8-4" class="css-skills-show">
+				</div>
+				<p class="css-skills-code" id="css-skills-code-8-4" >
+					css代码：<br />
+					<code>
+						@keyframes ants{<br />
+						&nbsp;&nbsp;to{background-position: 100%;}<br />
+						}<br />
+						border: 1px solid transparent;<br />
+						background: linear-gradient(white,<br />
+						&nbsp;&nbsp;white) padding-box,<br />
+						&nbsp;&nbsp;repeating-linear-gradient(135deg,<br />
+						&nbsp;&nbsp;black 0,black 25%,white 0,<br />
+						&nbsp;&nbsp;white 50%) 0 / .6em .6em;<br />
+						animation: ants 12s linear infinite;				
+
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-8-5" class="skills-parts">
+				<h3>顶部裁切效果</h3>
+				<div id="css-skills-show-8-5" class="css-skills-show">
+					To go over everything.
+				</div>
+				<p class="css-skills-code" id="css-skills-code-8-5" >
+					css代码：<br />
+					<code>
+						padding: 1em;<br />
+						border-top: .2em solid transparent;<br />
+						border-image: 100% 0 0 linear-gradient(<br />
+						&nbsp;&nbsp;90deg,currentColor 25%,transparent 0);<br />				
+
+					</code>
+				</p>
+			</div>
+		</section>
+	</body>
+	<script type="text/javascript">
+	</script>
+</html>
