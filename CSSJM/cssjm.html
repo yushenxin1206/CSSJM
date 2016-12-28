@@ -1301,23 +1301,105 @@ css代码：
 		<hr />
 		
 		<section class="css-skills" id="css-skills-30">
-			<h2>30 选用合适的鼠标光标</h2>
+			<h2>30 扩大可点击区域</h2>
 			<div id="css-skills-30-1" class="skills-parts">
-				<h3>禁用状态</h3>
-				<p>
-					<button></button>
-					<code>
-						cursor: not-allowed;
-					</code>
-				</p>
+				<h3>透明边框方案</h3>
+				<div id="css-skills-show-30-1" class="css-skills-show">
+						<span>+</span>
+				</div>
+<pre class="css-skills-code" id="css-skills-code-30-1">
+css代码：
+	<code>
+	border: 10px solid transparent;
+	background-clip: padding-box;
+	</code>
+</pre>
 			</div>
 			<div id="css-skills-30-2" class="skills-parts">
-				<h3>隐藏鼠标光标</h3>
-				<p>
-					<code>
-						cursor: none;
-					</code>
-				</p>
+				<h3>伪元素方案</h3>
+				<div id="css-skills-show-30-2" class="css-skills-show">
+						<button>+</button>
+				</div>
+<pre class="css-skills-code" id="css-skills-code-30-2">
+css代码：
+	<code> 
+	button{
+		position: relative;
+	}
+	button::before{
+		content: '';
+		position: absolute;
+		top: -10px; right: -10px; 
+		bottom: -10px; left: -10px;
+	}
+	</code>
+</pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-31">
+			<h2>31 自定义复选框</h2>
+			<div id="css-skills-31-1" class="skills-parts">
+				<h3>伪元素方案</h3>
+				<div id="css-skills-show-31-1" class="css-skills-show">
+						<input type="checkbox" id="awesome" />
+						<label for="awesome">Awesome</label>
+				</div>
+<pre class="css-skills-code" id="css-skills-code-31-1">
+css代码：
+	<code>
+	input[type="checkbox"]+label::before{
+		content: '\a0';
+		display: inline-block;
+		width: .8em;
+		height: .8em;
+		margin-right: .2em;
+		border-radius: .2em;
+		background: silver;
+		vertical-align: middle;
+		line-height: .6;
+	}
+
+	input[type="checkbox"]:checked+label::before{
+		content: '\2713';
+		background: yellowgreen;
+	}
+	input[type="checkbox"]{
+		position: absolute;
+		clip: rect(0,0,0,0);
+	}
+	</code>
+</pre>
+			</div>
+			<div id="css-skills-31-2" class="skills-parts">
+				<h3>开关式按钮</h3>
+				<div id="css-skills-show-31-2" class="css-skills-show">
+					<input type="checkbox" id="awesome2" />
+					<label for="awesome2">Awesome</label>
+				</div>
+<pre class="css-skills-code" id="css-skills-code-31-2">
+css代码：
+	<code> 
+	input[type="checkbox"]+label{
+		display: inline-block;
+		padding: .3em .5em;
+		background: #ccc;
+		background-image: linear-gradient(#ddd,#bbb);
+		border: 1px solid rgba(0,0,0,.2);
+		border-radius: .3em;
+		box-shadow: 0 1px white inset;
+		text-shadow: 0 1px 1px white;
+	}
+	input[type="checkbox"]:checked+label{
+		box-shadow: .05em, .1em .2em
+					rgba(0,0,0,.6) inset;
+		border-color: rgba(0,0,0,.3);
+		background:#bbb;
+	}
+	</code>
+</pre>
 			</div>
 		</section>
 	</body>
