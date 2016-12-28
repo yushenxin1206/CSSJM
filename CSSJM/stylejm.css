@@ -703,3 +703,62 @@ div#css-skills-show-27-4{
 				 0 0 1px black, 0 0 1px black,
 				 0 0 1px black,0 0 1px black;
 }
+div#css-skills-show-27-5{
+	background: hsl(210, 13%, 40%);
+	color: hsl(210, 13%, 75%);
+	padding: 1em;
+}
+div#css-skills-show-27-5 svg{
+	fill: currentColor;
+	stroke: black;
+	stroke-width: 1;
+	stroke-linejoin: round;
+}
+div#css-skills-show-27-6{
+	background: hsl(210, 13%, 40%);
+	color: hsl(210, 13%, 75%);
+	padding: 1em;
+	transition: 1s;
+}
+div#css-skills-show-27-6:hover{ 
+	text-shadow: 0 0 .1em, 0 0 .3em;
+}
+pre#css-skills-code-27-6{
+	padding: 1.7em 2em;
+}
+div#css-skills-show-27-7{
+	background: hsl(210, 13%, 40%);
+	color: white;
+	padding: 1em;
+	text-shadow: 0 1px hsl(0,0%,85%),/*从明到暗堆砌出立体感*/
+				 0 2px hsl(0,0%,80%),
+				 0 3px hsl(0,0%,75%),
+				 0 4px hsl(0,0%,70%),
+				 0 4px 5px black;
+}
+pre#css-skills-code-27-7{
+	padding: 1.7em 1em;
+}
+
+/*28 环形文字*/
+div#css-skills-show-28-1{
+	width: 20em;
+}
+div#css-skills-show-28-1 svg{
+	overflow: visible;
+	margin: 2em;
+}
+div#css-skills-show-28-1 svg path{
+	fill: none;
+}
+
+/*29 选用合适的鼠标光标*/
+div#css-skills-29-1 p{
+	cursor: not-allowed;
+}
+div#css-skills-29-2 p{
+	cursor: none;
+}
+
+/*30 扩大可点击区域*/
+div#

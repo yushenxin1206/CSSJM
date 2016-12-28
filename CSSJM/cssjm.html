@@ -1147,72 +1147,177 @@ css代码：
 				<div id="css-skills-show-27-1" class="css-skills-show">
 					HTML & CSS
 				</div>
-				<pre class="css-skills-code" id="css-skills-code-27-1" >
-				css代码：
-					<code>
-					background: hsl(210, 13%, 60%);
-					color: hsl(210, 13%, 30%);
-					text-shadow: 0 1px 1px hsla(0,0%,100%,.8);
-					</code>
-				</pre>
+<pre class="css-skills-code" id="css-skills-code-27-1" >
+css代码：
+	<code>
+	background: hsl(210, 13%, 60%);
+	color: hsl(210, 13%, 30%);
+	text-shadow: 0 1px 1px hsla(0,0%,100%,.8);
+	</code>
+</pre>
 			</div>
 			<div id="css-skills-27-2" class="skills-parts">
 				<h3>凸版印刷效果2</h3>
 				<div id="css-skills-show-27-2" class="css-skills-show">
 					HTML & CSS
 				</div>
-				<pre class="css-skills-code" id="css-skills-code-27-2" >
-				css代码：
-					<code>
-					background: hsl(210, 13%, 60%);
-					color: hsl(210, 13%, 30%);
-					text-shadow: 0 1px 1px hsla(0,0%,100%,.8);
-					</code>
-				</pre>
+<pre class="css-skills-code" id="css-skills-code-27-2" >
+css代码：
+	<code>
+	background: hsl(210, 13%, 60%);
+	color: hsl(210, 13%, 30%);
+	text-shadow: 0 1px 1px hsla(0,0%,100%,.8);
+	</code>
+</pre>
 			</div>
 			<div id="css-skills-27-3" class="skills-parts">
 				<h3>空心字效果—text-shadow方案1</h3>
 				<div id="css-skills-show-27-3" class="css-skills-show">
 					HTML & CSS
 				</div>
-				<pre class="css-skills-code" id="css-skills-code-27-3" >
-				css代码：
-					<code>
-					text-shadow: 1px 1px black, 1px -1px black,
-								-1px 1px black, -1px -1px black;
-								
-					</code>
-				</pre>
+<pre class="css-skills-code" id="css-skills-code-27-3" >
+css代码：
+	<code>
+	text-shadow: 1px 1px black, 1px -1px black,
+				-1px 1px black, -1px -1px black;
+				
+	</code>
+</pre>
 			</div>
 			<div id="css-skills-27-4" class="skills-parts">
 				<h3>空心字效果—text-shadow方案2</h3>
 				<div id="css-skills-show-27-4" class="css-skills-show">
 					HTML & CSS
 				</div>
-				<pre class="css-skills-code" id="css-skills-code-27-4" >
-				css代码：
-					<code>
-					text-shadow: 0 0 1px black, 0 0 1px black, 
-								 0 0 1px black, 0 0 1px black,
-								 0 0 1px black,0 0 1px black;
-					</code>
-				</pre>
+<pre class="css-skills-code" id="css-skills-code-27-4" >
+css代码：
+	<code>
+	text-shadow: 0 0 1px black, 0 0 1px black, 
+				 0 0 1px black, 0 0 1px black,
+				 0 0 1px black,0 0 1px black;
+	</code>
+</pre>
 			</div>
 			<div id="css-skills-27-5" class="skills-parts">
 				<h3>空心字效果—SVG方案</h3>
 				<div id="css-skills-show-27-5" class="css-skills-show">
-					<svg width="15em" height="1.2em">
-						<text>HTML & CSS</text>
+					<svg width="10em" height="1.2em">
+						<text y="1em">HTML & CSS</text>
 					</svg>
 				</div>
-				<pre class="css-skills-code" id="css-skills-code-27-5" >
-				css代码：
+<pre class="css-skills-code" id="css-skills-code-27-5" >
+css代码：
+	<code>
+	svg{
+		fill: currentColor; stroke: black;
+		stroke-width: 1; stroke-linejoin: round;
+	}
+	</code>
+</pre>
+			</div>
+			<div id="css-skills-27-6" class="skills-parts">
+				<h3>文字外发光效果</h3>
+				<div id="css-skills-show-27-6" class="css-skills-show">
+					HTML & CSS
+				</div>
+<pre class="css-skills-code" id="css-skills-code-27-6" >
+css代码：
+	<code>
+	div:hover{ 
+		text-shadow: 0 0 .1em, 0 0 .3em;
+	}
+	</code>
+</pre>
+			</div>
+			<div id="css-skills-27-7" class="skills-parts">
+				<h3>文字凸起效果</h3>
+				<div id="css-skills-show-27-7" class="css-skills-show">
+					HTML & CSS
+				</div>
+<pre class="css-skills-code" id="css-skills-code-27-7" >
+css代码：
+	<code>
+	text-shadow: 0 1px hsl(0,0%,85%), 0 2px hsl(0,0%,80%),
+				 0 3px hsl(0,0%,75%), 0 4px hsl(0,0%,70%),
+				 0 4px 5px black;
+	</code>
+</pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-28">
+			<h2>28 环形文字</h2>
+			<div id="css-skills-28-1" class="skills-parts">
+				<h3>SVG方案</h3>
+				<div id="css-skills-show-28-1" class="css-skills-show">
+					<svg viewBox="0 0 100 100">
+						<path d="M 0, 50 a 50, 50 0 1, 1 0, 1 z" id="circle-28-1" />
+						<text>
+							<textPath xlink:href="#circle-28-1">
+								The past , we were do not make us who we are
+							</textPath>
+						</text>
+					</svg>
+				</div>
+<pre class="css-skills-code" id="css-skills-code-28-1">
+css代码：
+	<code>
+	svg{
+		overflow: visible;
+		margin: 2em;
+	}
+	svg path{
+		fill: none;
+	}
+	</code>
+</pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-29">
+			<h2>29 选用合适的鼠标光标</h2>
+			<div id="css-skills-29-1" class="skills-parts">
+				<h3>禁用状态</h3>
+				<p>
 					<code>
-					text-shadow: 0 0 1px black, 0 0 1px black, 
-								 0 0 1px black, 0 0 1px black,
-								 0 0 1px black,0 0 1px black;
+						cursor: not-allowed;
 					</code>
-				</pre>
+				</p>
+			</div>
+			<div id="css-skills-29-2" class="skills-parts">
+				<h3>隐藏鼠标光标</h3>
+				<p>
+					<code>
+						cursor: none;
+					</code>
+				</p>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-30">
+			<h2>30 选用合适的鼠标光标</h2>
+			<div id="css-skills-30-1" class="skills-parts">
+				<h3>禁用状态</h3>
+				<p>
+					<button></button>
+					<code>
+						cursor: not-allowed;
+					</code>
+				</p>
+			</div>
+			<div id="css-skills-30-2" class="skills-parts">
+				<h3>隐藏鼠标光标</h3>
+				<p>
+					<code>
+						cursor: none;
+					</code>
+				</p>
 			</div>
 		</section>
 	</body>
