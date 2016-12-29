@@ -534,7 +534,7 @@ p#css-skills-code-17-1{
 div#css-skills-show-17-2{
 	transition: 1s background;
 	background: hsl(335, 50%, 50%);
-	isolation: isolate;/*与下层阻隔 仅回合透明背景*/
+	isolation: isolate;/*与下层阻隔 仅混合透明背景*/
 }
 div#css-skills-show-17-2>img{
 	display: block;
@@ -795,13 +795,15 @@ div#css-skills-show-30-2 button::before{
 
 /*31 自定义复选框*/
 section#css-skills-31 input[type="checkbox"]+label{
+	font: bold 200% sans-serif;
 	display: inline-block;
 	padding: .3em .5em;
 	cursor: pointer;
 	user-select: none;
 }
-div#css-skills-show-31-1,div#css-skills-show-31-2{
-	font: bold 200% sans-serif;
+section#css-skills-31  input[type="checkbox"]{
+	position: absolute;
+	clip: rect(0,0,0,0);/*裁剪绝对定位的元素*/
 }
 div#css-skills-show-31-1 input[type="checkbox"]+label::before {
 	content: '\a0';
@@ -817,10 +819,6 @@ div#css-skills-show-31-1 input[type="checkbox"]+label::before {
 div#css-skills-show-31-1 input[type="checkbox"]:checked+label::before {
 	content: '\2713';
 	background: yellowgreen;
-}
-div#css-skills-show-31-1 input[type="checkbox"],div#css-skills-show-31-2 input[type="checkbox"]{
-	position: absolute;
-	clip: rect(0,0,0,0);/*裁剪绝对定位的元素*/
 }
 div#css-skills-show-31-2 input[type="checkbox"]+label{
 	background: #ccc;
@@ -838,3 +836,83 @@ div#css-skills-show-31-2 input[type="checkbox"]:checked+label{
 pre#css-skills-code-31-2{
 	padding: 3.2em 1em;
 }
+
+/*32 通过阴影来弱化背景*/
+section#css-skills-32{
+	overflow: visible;
+}
+section#css-skills-32 input[type="checkbox"]+label{
+	font: bold 200% sans-serif;
+	display: inline-block;
+	padding: .3em .5em;
+	cursor: pointer;
+	user-select: none;
+}
+section#css-skills-32  input[type="checkbox"]{
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+section#css-skills-32 input[type="checkbox"]+label{
+	background: #ccc;
+	background-image: linear-gradient(#ddd,#bbb);
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: .3em;
+	box-shadow: 0 1px white inset;
+	text-shadow: 0 1px 1px white;
+	position: relative;
+	z-index: 1;
+}
+section#css-skills-32 input[type="checkbox"]:checked+label{
+	box-shadow: .05em, .1em .2em rgba(0,0,0,.6) inset;
+	border-color: rgba(0,0,0,.3);
+	background:#bbb;
+}
+section#css-skills-32 input[type="checkbox"]:checked~.overlay{
+	position: fixed;
+	top: 0; right: 0; left: 0; bottom: 0;
+	background: rgba(0,0,0,.5);
+}
+div#css-skills-show-32-2 input#overlay-show-2:checked+label::before{
+	content: '';
+	position: fixed;/*伪元素fixed overflow hidden仍有效*/
+	top: 0; right: 0; left: 0; bottom: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 1;
+}
+div#css-skills-show-32-3 input#overlay-show-3:checked+label{
+	box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
+}
+section#css-skills-32 dialog{ 
+	border: 1px solid #ccc;
+	border-radius: .5em;
+}
+div#css-skills-show-32-4 button{
+	cursor: pointer;
+	outline: none;
+	user-select: none;
+}
+div#css-skills-show-32-4>button{
+	font: bold 200% sans-serif;
+	display: inline-block;
+	padding: .3em .5em;
+	background: #ccc;
+	background-image: linear-gradient(#ddd,#bbb);
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: .3em;
+	box-shadow: 0 1px white inset;
+	text-shadow: 0 1px 1px white;
+}
+section#css-skills-32 dialog::backdrop{/*只有通过showModal()显示出来 才有backdrop*/
+	background: rgba(0,0,0,.5);
+}
+pre#css-skills-code-32-1{
+	padding: 2.1em 1em;
+}
+pre#css-skills-code-32-3{
+	padding: 4.5em 1em;
+}
+pre#css-skills-code-32-4{
+	padding: 3.4em 1em;
+}
+
+/*33 通过模糊来弱化背景*/
