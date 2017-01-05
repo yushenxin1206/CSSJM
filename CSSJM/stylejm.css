@@ -1064,3 +1064,64 @@ pre#css-skills-code-38-2{
 }
 
 /*39 满幅的背景 定宽的内容*/
+div#css-skills-39-1{
+	width: 100%;
+}
+div#css-skills-show-39-1{
+	font: bold 200% sans-serif;
+	color: white;
+	background: #58a;
+	height: 5em;
+	padding: 2em calc(50% - 10em);
+}
+div#css-skills-show-39-1 code{
+	display: block;
+	width: 17em;
+	margin: 1em auto;
+}
+
+/*40 垂直居中*/
+section#css-skills-40 .skills-parts{
+	width: 100%;
+}
+section#css-skills-40 pre{
+	font: bold 120% sans-serif;
+	color: #322;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+section#css-skills-40 .css-skills-show{
+	height: 20em;
+	background: #fb3;
+	position: relative;
+	border: 1px solid;
+}
+section#css-skills-40 .css-skills-show>div{
+	width: max-content;
+	height: 10em;
+	text-align: center;
+	background: #655;
+	padding: 1em;
+}
+section#css-skills-40 .css-skills-show h4{
+	font: bold 200% sans-serif;
+	color: white;
+}
+section#css-skills-40 .css-skills-show p{
+	font: bold 100% sans-serif;
+	color: white;
+}
+section#css-skills-40 div#css-skills-show-40-1>div{
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+}
+section#css-skills-40 div#css-skills-show-40-2>div{
+	margin: 2em auto;
+}
+section#css-skills-40 div#css-skills-show-40-3{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

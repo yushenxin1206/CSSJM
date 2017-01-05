@@ -1698,7 +1698,7 @@ css代码：
 	</code>
 </pre>
 			</div>
-				<div id="css-skills-38-2" class="skills-parts">
+			<div id="css-skills-38-2" class="skills-parts">
 				<h3>根据兄弟元素的数量范围来匹配元素</h3>
 				<div id="css-skills-show-38-2" class="css-skills-show">
 					<ul>
@@ -1732,6 +1732,90 @@ css代码：
 	}
 	</code>
 </pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-39">
+			<h2>39 满幅的背景 定宽的内容</h2>
+			<div id="css-skills-39-1" class="skills-parts">
+				<h3>无包裹层方案</h3>
+				<div id="css-skills-show-39-1" class="css-skills-show">
+					if you wanna cry , cry on my shoulder
+					<code>
+						padding: 2em calc(50% - 10em);
+					</code>
+				</div>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-40">
+			<h2>40 垂直居中</h2>
+			<div id="css-skills-40-1" class="skills-parts">
+				<h3>绝对定位方案</h3>
+				<div id="css-skills-show-40-1" class="css-skills-show">
+					<div>
+						<h4>Am I centered yet?</h4>
+						<p>center me,please!</p>
+					</div>
+					<pre>
+						<code>
+							position: absolute;
+							top: 50%; left: 50%;
+							transform: translate(-50%, -50%);
+						</code>
+					<pre>
+				</div>
+			</div>
+			<div id="css-skills-40-2" class="skills-parts">
+				<h3>外边距+视口单位方案</h3>
+				<div id="css-skills-show-40-2" class="css-skills-show">
+					<div>
+						<h4>Am I centered yet?</h4>
+						<p>center me,please!</p>
+					</div>
+					<pre>
+						只适合在视口中居中的场景
+						<code>
+							margin: 50vh auto 0;
+							transform: translateY(-50%);
+						</code>
+					<pre>
+				</div>
+			</div>
+			<div id="css-skills-40-3" class="skills-parts">
+				<h3>flexbox方案</h3>
+				<div id="css-skills-show-40-3" class="css-skills-show">
+					<div>
+						<h4>Am I centered yet?</h4>
+						<p>center me,please!</p>
+					</div>
+					<pre>
+						<code>
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						</code>
+					<pre>
+				</div>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-41">
+			<h2>41 紧贴底部的页脚</h2>
+			<div id="css-skills-41-1" class="skills-parts">
+				<h3>无包裹层方案</h3>
+				<div id="css-skills-show-41-1" class="css-skills-show">
+					if you wanna cry , cry on my shoulder
+					<code>
+						padding: 2em calc(50% - 10em);
+					</code>
+				</div>
 			</div>
 		</section>
 	</body>
