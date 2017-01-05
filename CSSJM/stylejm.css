@@ -20,7 +20,7 @@ section.css-skills{
 	padding-bottom: 1em;
 	background-color: floralwhite;
 	padding-left: 2rem;
-	overflow: hidden;
+	overflow: hidden;/*清除浮动 bfc原理*/
 }
 section.css-skills div.skills-parts{
 	float: left;
@@ -840,6 +840,12 @@ pre#css-skills-code-31-2{
 /*32 通过阴影来弱化背景*/
 section#css-skills-32{
 	overflow: visible;
+	/*由于chrome自身bug 有时设置hidden会隐藏fixed元素溢出部分 但设置overflow visible 不会产生BFC*/	
+}
+section#css-skills-32::after{/*通过伪元素清除浮动*/
+	display: block;
+	content: '';
+	clear: left;
 }
 section#css-skills-32 input[type="checkbox"]+label{
 	font: bold 200% sans-serif;
@@ -860,7 +866,7 @@ section#css-skills-32 input[type="checkbox"]+label{
 	box-shadow: 0 1px white inset;
 	text-shadow: 0 1px 1px white;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 }
 section#css-skills-32 input[type="checkbox"]:checked+label{
 	box-shadow: .05em, .1em .2em rgba(0,0,0,.6) inset;
@@ -871,13 +877,14 @@ section#css-skills-32 input[type="checkbox"]:checked~.overlay{
 	position: fixed;
 	top: 0; right: 0; left: 0; bottom: 0;
 	background: rgba(0,0,0,.5);
+	z-index: 1;
 }
 div#css-skills-show-32-2 input#overlay-show-2:checked+label::before{
 	content: '';
 	position: fixed;/*伪元素fixed overflow hidden仍有效*/
 	top: 0; right: 0; left: 0; bottom: 0;
 	background: rgba(0,0,0,.5);
-	z-index: 1;
+	z-index: 1;/*关于层叠 无论fixed还是absolute 只在父层叠上下文的层叠顺序！ 而不是看相对元素*/
 }
 div#css-skills-show-32-3 input#overlay-show-3:checked+label{
 	box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
@@ -916,3 +923,144 @@ pre#css-skills-code-32-4{
 }
 
 /*33 通过模糊来弱化背景*/
+div#css-skills-33-1{
+	position: relative;
+}
+div#css-skills-show-33-1{
+	width: 26em;
+	height:6em;
+	filter: blur(3px);
+	overflow: hidden;
+}
+div#css-skills-show-33-1-2{
+	position: absolute;
+	top: 6em;
+	left: 2.2em;
+	background: white;
+	box-shadow: 0 0 0 2.3em rgba(0,0,0,.5);
+}
+
+/*34 滚动提示*/
+div#css-skills-show-34-1>ul{
+	font-size: 1.5em;
+	width: 10em;
+	height: 8em;
+	overflow: auto;
+	border: 1px solid silver;
+	padding: .3em .5em;/*列表前的点只是装饰 不占位 当padding变小时 点会挤到外面去*/
+	background: linear-gradient(floralwhite 30%, rgba(255,255,255,0)),
+				radial-gradient(at top, rgba(0,0,0,.4), transparent 70%);
+	background-size:  100% 3em, 100% 1em;
+	background-repeat: no-repeat;
+	background-attachment: local, scroll;
+}
+
+/*35 交互式的图像对比控件*/
+div#css-skills-show-35-1{
+	position: relative;
+}
+div#css-skills-show-35-1>div{
+	position: absolute;
+	top: 0; right: 50%;bottom: 0; left: 0;
+	background: white;/*使图像不透明*/
+	/*
+		因为此前上层图像是半透明的 效果跟没叠加一样
+		还以为层叠出问题了 真是尴尬！！！！
+	*/
+	overflow: hidden;
+	resize: horizontal;
+	max-width: 100%;
+	/*
+		如果希望此属性生效，需要设置元素的 overflow 属性，
+		值可以是 auto、hidden 或 scroll。
+	*/
+}
+div#css-skills-show-35-1>div::before{
+	content: '';
+	position: absolute;
+	right: 0; bottom: 0;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(135deg, transparent 50%, white 0);
+	cursor: ew-resize;
+}
+
+/*36 自适应内部元素*/
+div#css-skills-show-36-1{
+	border-radius: 2em;
+	border: 1px solid silver;
+	padding: 1em;
+}
+/*figure标签默认有margin*/
+div#css-skills-show-36-1 figure{
+	max-width: min-content;
+	max-width: 350px;
+	margin: 1em auto;/*若只写auto 左右会计算 上下取默认值*/
+}
+
+/*37 精确控制表格列宽*/
+div#css-skills-show-37-1{
+	width: 30em;
+	background: #58a;
+	padding: .3em;
+}
+div#css-skills-show-37-1>table{
+	table-layout: fixed;
+	border-collapse: collapse;
+	border: white;
+	width: 100%;
+	white-space: nowrap
+}
+div#css-skills-show-37-1>table td,div#css-skills-show-37-1>table th{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/*需配合overflow hidden使用 否则会和visible起冲突*/
+}
+
+/*38 根据兄弟元素的数量来设置样式*/
+section#css-skills-38 div.css-skills-show{
+	width: 30em;
+	height: 19em;
+	border: 1px solid silver;
+}
+section#css-skills-38 div.css-skills-show ul{
+	padding: 0;
+	padding-top: .2em;
+	height: 5em;
+	background: #58a;
+}
+section#css-skills-38 div.css-skills-show ul li{
+	display: inline-block;
+	font: bold 1.5em sans-serif; 
+	text-align: center;
+	line-height: 3;
+	border: 1px solid white;
+	border-radius: .3em;
+}
+div#css-skills-show-38-1 ul li:only-child{ 
+	width: calc(100% - 2px);
+}
+div#css-skills-show-38-1 ul li:first-child:nth-last-child(2),
+div#css-skills-show-38-1 ul li:first-child:nth-last-child(2)~li{
+	width: calc(50% - 6px);
+}
+div#css-skills-show-38-1 ul li:first-child:nth-last-child(3),/*li间的空隙是由空格产生的*/
+div#css-skills-show-38-1 ul li:first-child:nth-last-child(3)~li{
+	width: calc(33% - 6px);
+}
+section#css-skills-38 div#css-skills-show-38-2{
+	width: 35em;
+}
+div#css-skills-show-38-2 ul li:first-child:nth-last-child(-n+2),
+div#css-skills-show-38-2 ul li:first-child:nth-last-child(-n+2)~li{
+	width: 40%;
+}
+div#css-skills-show-38-2 ul li:first-child:nth-last-child(n+3):nth-last-child(-n+4),
+div#css-skills-show-38-2 ul li:first-child:nth-last-child(n+3):nth-last-child(-n+4)~li{
+	width: 20%;
+}
+pre#css-skills-code-38-2{
+	padding: 2.8em 1em;
+}
+
+/*39 满幅的背景 定宽的内容*/

@@ -1406,7 +1406,7 @@ css代码：
 		<hr />
 		
 		<section class="css-skills" id="css-skills-32">
-			<h2>32 通过阴影弱化背景</h2>
+			<h2>32 通过阴影来弱化背景</h2>
 			<div id="css-skills-32-1" class="skills-parts">
 				<h3>html元素方案</h3>
 				<div id="css-skills-show-32-1" class="css-skills-show">
@@ -1453,7 +1453,7 @@ css代码：
 <pre class="css-skills-code" id="css-skills-code-32-3">
 css代码：
 	<code>
-		box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
+	box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
 	</code>
 </pre>
 			</div>
@@ -1472,6 +1472,264 @@ css代码：
 	dialog::backdrop{
 		background: rgba(0,0,0,.5);
 	}	
+	</code>
+</pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-33">
+			<h2>33 通过模糊来弱化背景</h2>
+			<div id="css-skills-33-1" class="skills-parts">
+				<h3>main元素方案</h3>
+				<div id="css-skills-show-33-1" class="css-skills-show">
+					The past , we were do not make us who we are
+					The past , we were do not make us who we are
+					The past , we were do not make us who we are
+					The past , we were do not make us who we are
+					The past , we were do not make us who we are
+					The past , we were do not make us who we are
+				</div>
+				<div id="css-skills-show-33-1-2">
+					The past , we were do not make us who we are
+				</div>
+<pre class="css-skills-code" id="css-skills-code-33-1">
+css代码：
+	<code>
+		main{
+			filter: blur(3px);
+		}
+		dialog{
+			box-shadow: 0 0 0 3em rgba(0,0,0,.5);
+		}
+	</code>
+</pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-34">
+			<h2>34 滚动提示</h2>
+			<div id="css-skills-34-1" class="skills-parts">
+				<h3>main元素方案</h3>
+				<div id="css-skills-show-34-1" class="css-skills-show">
+					<ul>	
+						<li>Ada Catlace</li>	
+						<li>Alan Purring</li>
+						<li>Schrödingcat</li>
+						<li>Tim Purrners-Lee</li>
+						<li>Webkitty</li>	
+						<li>Json</li>
+						<li>Void</li>
+						<li>Neko</li>	
+						<li>NaN</li>
+						<li>Cat5</li>
+						<li>Vector</li>
+					</ul>
+				</div>
+<pre class="css-skills-code" id="css-skills-code-34-1">
+css代码：
+	<code>
+	ul{
+		overflow: auto;
+		border: 1px solid silver;
+		padding: .3em .5em;
+		background: linear-gradient(floralwhite 30%,
+					rgba(255,255,255,0)),
+					radial-gradient(at top, 
+					rgba(0,0,0,.4), transparent 70%);
+		background-size:  100% 3em, 100% 1em;
+		background-repeat: no-repeat;
+		background-attachment: local, scroll;
+	}
+	</code>
+</pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-35">
+			<h2>35 交互式的图片对比控件</h2>
+			<div id="css-skills-35-1" class="skills-parts">
+				<h3>CSS3 resize方案</h3>
+				<div id="css-skills-show-35-1" class="css-skills-show">
+					<img src="./images/cat.jpg" alt="cat1" />
+					<div>
+						<img src="./images/cat2.png" alt="cat2" />
+					</div>
+				</div>
+				<pre class="css-skills-code" id="css-skills-code-35-1">
+				css代码：
+					<code>
+					div#wrap{
+						position: relative;
+					}
+					div#wrap>div{
+						position: absolute;
+						top: 0; right: 50%;bottom: 0; left: 0;
+						overflow: hidden;
+						resize: horizontal;
+						max-width: 100%;
+					}
+					</code>
+				</pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-36">
+			<h2>36 自适应内部元素</h2>
+			<div id="css-skills-36-1" class="skills-parts">
+				<h3>CSS3 min-content</h3>
+				<div id="css-skills-show-36-1" class="css-skills-show">
+					<p>
+						The past , we were do not make us who we are;
+						The past , we were do not make us who we are;
+					</p>
+					<figure>
+						<img width="300" height="180" src="./images/cat.jpg" alt="cat" />
+						<figcaption>
+							If you were a teardrop In my eye, 
+							For fear of losing you,I would never cry 
+						</figcaption>
+					</figure>
+					<p>
+						Without you?I'd be a soul without a purpose. 
+						Without you?I'd be an emotion without a heart 
+					</p>
+				</div>
+				<pre class="css-skills-code" id="css-skills-code-36-1">
+				css代码：
+					<code>
+					div#wrap{
+						position: relative;
+					}
+					div#wrap>div{
+						position: absolute;
+						top: 0; right: 50%;bottom: 0; left: 0;
+						overflow: hidden;
+						resize: horizontal;
+						max-width: 100%;
+					}
+					</code>
+				</pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-37">
+			<h2>37 精确控制表格的列宽</h2>
+			<div id="css-skills-37-1" class="skills-parts">
+				<h3>table-layout: fixed 方案</h3>
+				<div id="css-skills-show-37-1" class="css-skills-show">
+					<table border="1">
+					  <tr>
+						<th>if you wanna cry , cry on my shoulder</th>
+						<th>if you need someone who cares for you</th>
+					  </tr>
+					  <tr>
+						<td>If you wanna cry</td>
+						<td>
+							You can live on the lie or you can leave it behind
+						</td>
+					  </tr>
+					</table>
+				</div>
+			<pre class="css-skills-code" id="css-skills-code-37-1">
+			css代码：
+				<code>
+				table{
+					table-layout: fixed;
+					border-collapse: collapse;
+					border: white;
+					width: 100%;
+					white-space: nowrap
+				}
+				th,td{
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				</code>
+			</pre>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-38">
+			<h2>38 根据兄弟元素的数量来设置样式</h2>
+			<div id="css-skills-38-1" class="skills-parts">
+				<h3>nth-last-child方案</h3>
+				<div id="css-skills-show-38-1" class="css-skills-show">
+					<ul>
+						<li>1</li>
+					</ul>
+						
+					<ul>
+						<li>1</li>
+						<li>2</li>
+					</ul>
+					
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</div>
+<pre class="css-skills-code" id="css-skills-code-38-1">
+css代码：
+	<code>
+	ul li:only-child{
+		width: calc(100% - 2px);
+	}
+	ul li:first-child:nth-last-child(2),
+	ul li:first-child:nth-last-child(2)~li{
+		width: calc(50% - 6px);
+	}
+	ul li:first-child:nth-last-child(3),
+	ul li:first-child:nth-last-child(3)~li{
+		width: calc(33% - 6px);
+	}
+	</code>
+</pre>
+			</div>
+				<div id="css-skills-38-2" class="skills-parts">
+				<h3>根据兄弟元素的数量范围来匹配元素</h3>
+				<div id="css-skills-show-38-2" class="css-skills-show">
+					<ul>
+						<li>1</li>
+						<li>2</li>
+					</ul>
+					
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+					
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+				</div>
+<pre class="css-skills-code" id="css-skills-code-38-2">
+css代码：
+	<code>
+	ul li:first-child:nth-last-child(-n+2),
+	ul li:first-child:nth-last-child(-n+2)~li{
+		width: 40%;
+	}
+	ul li:first-child:nth-last-child(n+3):nth-last-child(-n+4),
+	ul li:first-child:nth-last-child(n+3):nth-last-child(-n+4)~li{
+		width: 20%;
+	}
 	</code>
 </pre>
 			</div>
