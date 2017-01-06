@@ -1809,12 +1809,68 @@ css代码：
 		<section class="css-skills" id="css-skills-41">
 			<h2>41 紧贴底部的页脚</h2>
 			<div id="css-skills-41-1" class="skills-parts">
-				<h3>无包裹层方案</h3>
+				<h3>固定高度方案</h3>
 				<div id="css-skills-show-41-1" class="css-skills-show">
-					if you wanna cry , cry on my shoulder
-					<code>
-						padding: 2em calc(50% - 10em);
-					</code>
+					<div class="user-top">
+<pre>
+	<code>
+		min-height: calc(100% - 3em);
+	</code>
+<pre>
+					</div>
+					<div class="user-bottom">
+						i am footer
+					</div>
+				</div>
+			</div>
+			<div id="css-skills-41-2" class="skills-parts">
+				<h3>弹性盒子方案</h3>
+				<div id="css-skills-show-41-2" class="css-skills-show">
+					<div class="user-top">
+		<pre>
+			<code>
+			body{
+				display: flex;
+				flex-flow: column;
+			}
+			main{
+				flex: 1;
+			}
+			</code>
+		<pre>
+					</div>
+					<div class="user-bottom">
+						i am footer
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-42">
+			<h2>42 缓动效果</h2>
+			<div id="css-skills-42-1" class="skills-parts">
+				<h3>弹跳动画</h3>
+				<div id="css-skills-show-42-1" class="css-skills-show">
+		<pre>
+			<code>
+			@keyframes bounce{ 
+			60%, 80%, to{ 
+					transform: translateY(12em);
+					animation-timing-function: ease-out;
+				}
+			70% { transform: translateY(8em); }
+			90% { transform: translateY(10em); }
+			}
+			ball{
+				animation: bounce 3s ease-in 3s infinite;
+			}
+			</code>
+		</pre>
+					<div class="user-ball">
+						
+					</div>
 				</div>
 			</div>
 		</section>

@@ -1125,3 +1125,64 @@ section#css-skills-40 div#css-skills-show-40-3{
 	align-items: center;
 	justify-content: center;
 }
+
+/*41 紧贴底部的页脚*/
+section#css-skills-41 .css-skills-show{
+	border: 1px solid;
+	width: 20em;
+	height: 25em;
+	background: #58a;
+	color: white;
+	font: 200% bold sans-serif;
+}
+section#css-skills-41 .css-skills-show .user-bottom{/*margin 外泄对布局有影响*/
+	background: #655;
+	text-align: center;
+	padding: 1em;
+	line-height: 1;/*默认的行高加了2px*/ 
+}
+section#css-skills-41 div#css-skills-show-41-1 .user-top{
+	border: 1px solid;
+	min-height: calc(100% - 3em);
+}
+section#css-skills-41 div#css-skills-show-41-2{
+	display: flex;
+	flex-flow: column;
+}
+section#css-skills-41 div#css-skills-show-41-2 .user-top{
+	flex: 1;
+}
+
+/*42 缓动效果*/
+section#css-skills-42 .css-skills-show{
+	border: 1px solid;
+	width: 20em;
+	height: 15em;
+	background: #58a;
+	color: white;
+	font: 150% bold sans-serif;
+	position: relative;
+}
+@keyframes bounce{ 
+	60%, 80%, to{ 
+			transform: translateY(12em);
+			animation-timing-function: ease-out;
+		}
+	70% { transform: translateY(8em); }
+	90% { transform: translateY(10em); }
+}
+section#css-skills-42 div#css-skills-show-42-1 .user-ball{
+	position: absolute;
+	top: 1em; left: 1em;
+	height: 2em;
+	width: 2em;
+	border-radius: 50%;
+	background: radial-gradient(circle at 30% 30%, white, red);
+	animation: bounce 3s ease-in infinite;
+}
+section#css-skills-42 div#css-skills-show-42-1 code{
+	font-size: .6em;
+}
+section#css-skills-42 div#css-skills-show-42-1 pre{
+	margin: 0;
+}
