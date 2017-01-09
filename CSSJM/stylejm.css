@@ -1162,6 +1162,7 @@ section#css-skills-42 .css-skills-show{
 	color: white;
 	font: 150% bold sans-serif;
 	position: relative;
+	padding: 1em;
 }
 @keyframes bounce{ 
 	60%, 80%, to{ 
@@ -1185,4 +1186,109 @@ section#css-skills-42 div#css-skills-show-42-1 code{
 }
 section#css-skills-42 div#css-skills-show-42-1 pre{
 	margin: 0;
+}
+section#css-skills-42 div#css-skills-show-42-2 label{
+	position: relative;
+}
+section#css-skills-42 div#css-skills-show-42-2 span.user-callout{
+	font-size: .6em;
+	background: #655;
+	position: absolute;
+	top: 2.2em;
+	left: 13em;
+	text-align: center;
+}
+section#css-skills-42 div#css-skills-show-42-2 span.user-callout::before{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: .6em solid transparent;
+	border-bottom:.6em solid #655;
+	top: -.9em;
+}
+section#css-skills-42 div#css-skills-show-42-2 input:not(:focus) + .user-callout{
+	transform: scale(0);
+	transition-timing-function: ease;
+}
+.user-callout{
+	transition: .5s transform cubic-bezier(.25,.1,.3,1.5);
+	transform-origin: 1.4em -.4em;
+}
+
+/*43 逐帧动画*/
+div#css-skills-show-43-1{
+	padding: 1em;
+	background: #58a;
+}
+@keyframes loader{
+	to{ background-position: -800px 0;}
+}
+div#css-skills-show-43-1 .user-loader{
+	width: 100px;
+	height: 100px;
+	background: url(./images/loader.png);
+	animation: loader 1s infinite steps(8);
+}
+
+/*44 闪烁效果*/
+section#css-skills-44 div.css-skills-show{
+	padding: 1em;
+	background: #58a;
+}
+section#css-skills-44 div.css-skills-show p{
+	font: 150% bold sans-serif;
+	color: white;
+}
+@keyframes blink-smooth{
+	to{ color:transparent;}
+}
+div#css-skills-show-44-1 p:hover{
+	animation: 1s blink-smooth 6 alternate; 
+}
+@keyframes blink{
+	50%{ color:transparent;}
+}
+div#css-skills-show-44-2 p:hover{
+	animation: 1s blink 3 steps(1); 
+}
+
+/*45 打字动画*/
+div#css-skills-show-45-1{
+	padding: 1em;
+	background: #58a;
+}
+div#css-skills-show-45-1 p{
+	width: 15ch;
+	font: 150% bold sans-serif;
+	color: white;
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: .1em solid transparent;
+}
+@keyframes typing{
+	from{ width: 0;}
+}
+@keyframes caret{
+	50%{ border-color: currentColor;}
+}
+div#css-skills-show-45-1 p:hover{
+	border-right: .1em solid transparent;
+	animation: typing 15s steps(15),
+				caret 1s steps(1,start) infinite;
+}
+
+/*46 状态平滑的动画*/
+@keyframes boat{
+	to{ background-position: 100% 0;}
+}
+div#css-skills-show-46-1{
+	width: 24em;
+	height: 20em;
+	background: url(./images/boat.jpg) 0 0 / auto 100%;
+	animation: boat 10s linear infinite alternate;
+	animation-play-state: paused;
+}
+div#css-skills-show-46-1:hover{
+	animation-play-state: running;
 }

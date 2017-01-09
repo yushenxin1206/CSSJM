@@ -1853,6 +1853,9 @@ css代码：
 			<div id="css-skills-42-1" class="skills-parts">
 				<h3>弹跳动画</h3>
 				<div id="css-skills-show-42-1" class="css-skills-show">
+					<div class="user-ball">
+							
+					</div>
 		<pre>
 			<code>
 			@keyframes bounce{ 
@@ -1868,10 +1871,156 @@ css代码：
 			}
 			</code>
 		</pre>
-					<div class="user-ball">
+				</div>
+			</div>
+			<div id="css-skills-42-2" class="skills-parts">
+				<h3>弹性过渡</h3>
+				<div id="css-skills-show-42-2" class="css-skills-show">
+					<label>
+						Your username: <input id="username-42-2" />
+						<span class="user-callout">
+							Only letters, numbers, underscores (_) and hyphens (-) allowed!
+						</span>
+					</label>
+<pre>
+<code>
+input:not(:focus) + .user-callout{
+	transform: scale(0);
+	transition-timing-function: ease;
+}
+.user-callout{
+	transition: .5s transform 
+			cubic-bezier(.25,.1,.3,1.5);
+	transform-origin: 1.4em -.4em;
+}
+</code>
+</pre>
+				</div>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-43">
+			<h2>43 逐帧动画</h2>
+			<div id="css-skills-43-1" class="skills-parts">
+				<h3>steps方案</h3>
+				<div id="css-skills-show-43-1" class="css-skills-show">
+					<div class="user-loader">
 						
 					</div>
+					<pre>
+						<code>
+						@keyframes loader{
+							to{ background-position: -800px 0;}
+						}
+						.user-loader{
+							width: 100px;
+							height: 100px;
+							background: url(./images/loader.png);
+							animation: loader 1s infinite steps(8);
+						}
+						</code>
+					</pre>
 				</div>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-44">
+			<h2>44 闪烁效果</h2>
+			<div id="css-skills-44-1" class="skills-parts">
+				<h3>平滑闪烁</h3>
+				<div id="css-skills-show-44-1" class="css-skills-show">
+					<p>
+						if you wanna cry , cry on my shoulder
+					</p>
+					<pre>
+						<code>
+							@keyframes blink-smooth{
+								to{ color:transparent;}
+							}
+							p:hover{
+								animation: 1s blink-smooth 6 alternate; 
+							}
+						</code>
+					</pre>
+				</div>
+			</div>
+			<div id="css-skills-44-2" class="skills-parts">
+				<h3>普通闪烁</h3>
+				<div id="css-skills-show-44-2" class="css-skills-show">
+					<p>
+						if you wanna cry , cry on my shoulder
+					</p>
+					<pre>
+						<code>
+							@keyframes blink{
+								50%{ color:transparent;}
+							}
+							p:hover{
+								animation: 1s blink 3 steps(1); 
+							}
+						</code>
+					</pre>
+				</div>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-45">
+			<h2>45 打字动画</h2>
+			<div id="css-skills-45-1" class="skills-parts">
+				<h3>border方案</h3>
+				<div id="css-skills-show-45-1" class="css-skills-show">
+					<p>CSS is awesome!</p>
+					<pre>
+						<code>
+						@keyframes typing{
+							from{ width: 0;}
+						}
+						@keyframes caret{
+							50%{ border-color: transparent;}
+						}
+						p:hover{
+							animation: typing 15s steps(15),
+										caret 1s steps(1) infinite;
+						}
+						</code>
+					</pre>
+				</div>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-46">
+			<h2>46 状态平滑的动画</h2>
+			<div id="css-skills-46-1" class="skills-parts">
+				<h3>animation-play-state方案</h3>
+				<div id="css-skills-show-46-1" class="css-skills-show">
+				
+				</div>
+<pre class="css-skills-code" id="css-skills-code-46-1">
+css代码：
+	<code>
+	@keyframes boat{
+		to{ background-position: 100% 0;}
+	}
+	div{
+		background: url(./images/boat.jpg) 
+					0 0 / auto 100%;
+		animation:  boat 10s linear 
+					infinite alternate;
+		animation-play-state: paused;
+	}
+	div:hover{
+		animation-play-state: running;
+	}
+	</code>
+</pre>
 			</div>
 		</section>
 	</body>
