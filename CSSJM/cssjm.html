@@ -2023,6 +2023,81 @@ css代码：
 </pre>
 			</div>
 		</section>
+		
+		<hr />
+		
+		<section class="css-skills" id="css-skills-47">
+			<h2>47 沿环形路径平移的动画</h2>
+			<div id="css-skills-47-1" class="skills-parts">
+				<h3>背景可旋转的解决方案</h3>
+				<div id="css-skills-show-47-1" class="css-skills-show">
+					<img width="100" height="100" src="./images/cat.png" alt="cat" />
+				</div>
+<pre class="css-skills-code" id="css-skills-code-47-1">
+css代码：
+	<code>
+	@keyframes spin{
+		to{ transform: rotate(1turn);}
+	}
+	div{
+		animation: spin 6s linear infinite;
+	}
+	img{
+		animation: spin 6s linear infinite reverse;
+	}
+	</code>
+</pre>
+			</div>
+			<div id="css-skills-47-2" class="skills-parts">
+				<h3>两个元素的解决方案</h3>
+				<div id="css-skills-show-47-2" class="css-skills-show">
+					<div class="user-wrap">
+						<img width="100" height="100" src="./images/cat.png" alt="cat" />
+					</div>
+				</div>
+	<pre class="css-skills-code" id="css-skills-code-47-2">
+	css代码：
+		<code>
+		.wrap{
+			animation: spin 6s linear infinite;
+			transform-origin: 50% 14.5em;
+		}
+		img{
+			animation: spin 6s linear infinite reverse;
+		}
+		</code>
+	</pre>
+			</div>
+			<div id="css-skills-47-3" class="skills-parts">
+				<h3>单个元素的解决方案</h3>
+				<div id="css-skills-show-47-3" class="css-skills-show">
+					<img width="100" height="100" src="./images/cat.png" alt="cat" />
+				</div>
+	<pre class="css-skills-code" id="css-skills-code-47-3">
+	css代码：
+		<code>
+		@keyframes spin2{
+			 from{
+				transform:  translateY( calc(14.5em - 50px))
+							rotate(0turn) 
+							translateY( calc(50px - 14.5em))
+							rotate(-0turn); 
+											
+			} 
+			to{ 
+				transform:  translateY( calc(14.5em - 50px))
+							rotate(1turn)
+							translateY( calc(50px - 14.5em))
+							rotate(-1turn);
+			}
+		}
+		img{
+			animation: spin2 6s linear infinite;
+		}
+		</code> 
+	</pre>
+			</div>
+		</section>
 	</body>
 	<script type="text/javascript">
 	</script>

@@ -2,6 +2,7 @@ html{
 	font-size: 14px;/*rem是相对于html的font-size*/
 	background-color: whitesmoke;
 	tab-size: 4;
+	font-family: sans-serif;
 }
 /**
 	标签和类样式设置
@@ -1291,4 +1292,66 @@ div#css-skills-show-46-1{
 }
 div#css-skills-show-46-1:hover{
 	animation-play-state: running;
+}
+
+/*47 沿环形路径平移的动画*/
+section#css-skills-47 .css-skills-show{
+	width: 30em;
+	height: 30em;
+	background: #fb3;
+	border-radius: 50%;
+	position: relative;
+}
+section#css-skills-47 .css-skills-show img{
+	border-radius: 50%;
+	position: absolute;
+	top: .5em;
+	left: calc(50% - 50px);
+}
+@keyframes spin{
+	to{ transform: rotate(1turn);}
+}
+section#css-skills-47 div#css-skills-show-47-1 {
+	animation: spin 6s linear infinite;
+}
+section#css-skills-47 div#css-skills-show-47-1 img{
+	animation: spin 6s linear infinite reverse;
+}
+section#css-skills-47 div#css-skills-show-47-2 div.user-wrap{
+	position: absolute;
+	top: .5em;
+	left: calc(50% - 50px);
+	width: 100px;
+	height: 100px;
+	animation: spin 6s linear infinite;
+	transform-origin: 50% 14.5em;
+}
+section#css-skills-47 div#css-skills-show-47-2 img{
+	position: static;
+	animation: spin 6s linear infinite reverse;
+}
+@keyframes spin2{/*from是none时to可以自动填补关键帧 不是none时 要根据from来对应填补*/
+	 from{
+		transform:  translateY( calc(14.5em - 50px))
+					rotate(0turn) 
+					translateY( calc(50px - 14.5em))
+					rotate(-0turn); 
+									
+	} 
+	to{ 
+		transform:  translateY( calc(14.5em - 50px))
+					rotate(1turn)
+					translateY( calc(50px - 14.5em))
+					rotate(-1turn);
+	}
+}
+section#css-skills-47 div#css-skills-show-47-3 img{
+	animation: spin2 6s linear infinite;
+}
+
+pre#css-skills-code-47-2{
+	padding: 7.3em 1em;
+}
+pre#css-skills-code-47-1{
+	padding: 6.7em 1em;
 }
