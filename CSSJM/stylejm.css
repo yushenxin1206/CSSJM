@@ -3,12 +3,116 @@ html{
 	background-color: whitesmoke;
 	tab-size: 4;
 	font-family: sans-serif;
+	overflow: hidden;
+	/*
+		浏览器自己的滚动条在回流重绘后会自动回到顶部 故禁用
+		但也导致href="#" 回不了顶部
+	*/
 }
+
+/**
+	导航
+*/
+main{
+	width: 100%;
+	height: 100vh;
+	float: right;
+	transition: width 1s;
+	overflow-y: auto; /*为元素加滚动条 避免直接回顶部*/
+}
+nav{
+	width: 0;
+	position: fixed;
+	top: 0; left: 0;
+	background: #58a;
+	padding: 0em;
+	box-sizing: border-box;
+	height: 100vh;
+	white-space: nowrap;
+	overflow-x: hidden;
+	overflow-y: auto;
+	transition: width 1s, padding 1s;
+}
+nav h2{
+	font-size: 160%;
+}
+nav h3{
+	font-size: 140%;
+}
+nav section.chapters a{
+	display: block;
+	font: bold 120% sans-serif;
+	margin: 1em;
+	color: inherit;
+    text-decoration: none;
+}
+nav section.chapters a:hover{
+	color: #ddd;
+	text-decoration: underline;
+}
+input#show-menu{
+	position: absolute;
+	top: 0; left: 0;
+	clip: rect(0,0,0,0);
+}
+input#show-menu+label{
+	position: fixed;
+	z-index: 1;
+	left: .8em;
+	top: .2em;
+	width: 1.5em;
+	height: 2em;
+	background: linear-gradient(transparent 75%, #58a) 0 0 / 100% .7em;
+	cursor: pointer;
+}
+input#show-menu+label:hover{
+	background-image: linear-gradient(transparent 70%, darkgreen);
+}
+input#show-menu:checked+label{
+	background-image: linear-gradient(transparent 80%, #ccc);
+}
+input#show-menu:checked+label:hover{
+	background-image: linear-gradient(transparent 70%, #ddd);
+}
+input#show-menu:checked~nav{
+	width: 21em;/*min-content不能解析为一个值 不能产生过渡效果*/
+	padding: 2em;
+}
+input#show-menu:checked~main{
+	width: calc(100% - 21em);
+}
+/*回顶部标签*/
+a#go-top{
+	display: block;
+	text-decoration: none;
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	right: 3em;
+	bottom: 3em;
+	font: bold 120% sans-serif;
+	color: white;
+	line-height: 60px;
+	text-align: center;
+	background: linear-gradient(135deg, transparent 17.5px, rgba(0,0,0,.3) 0),
+				linear-gradient(-135deg, transparent 17.5px, rgba(0,0,0,.3) 0);
+	background-position: top left, right top;
+	background-size: 25px 50px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+a#go-top:hover{
+	background-image: linear-gradient(135deg, transparent 17.5px, rgba(0,0,0,.5) 0),
+						linear-gradient(-135deg, transparent 17.5px, rgba(0,0,0,.5) 0);
+}
+
 /**
 	标签和类样式设置
 */
 h1{
-	padding-left: 2rem;
+	padding-left: 3rem;
+	padding-top: .67em;/*使锚点能够定位到顶部*/
+	margin-top: 0;
 }
 pre.css-skills-code{
 	background: tan;
@@ -20,7 +124,7 @@ section.css-skills{
 	padding-top: 1em;
 	padding-bottom: 1em;
 	background-color: floralwhite;
-	padding-left: 2rem;
+	padding-left: 3rem;
 	overflow: hidden;/*清除浮动 bfc原理*/
 }
 section.css-skills div.skills-parts{
@@ -475,7 +579,7 @@ p#css-skills-code-14-2{
 div#css-skills-show-14-3{
 	height: 10em;
 }
-@keyframes spin2{
+@keyframes spin21{
 	to{stroke-dasharray: 100 100;}
 }
 div#css-skills-show-14-3 circle{
@@ -483,7 +587,7 @@ div#css-skills-show-14-3 circle{
 	stroke: #655;
 	stroke-width: 32;
 	stroke-dasharray: 0 100;
-	animation: spin2 6s linear infinite;
+	animation: spin21 6s linear infinite;
 }
 div#css-skills-show-14-3 svg{
 	display: block;
@@ -1229,7 +1333,7 @@ div#css-skills-show-43-1 .user-loader{
 	width: 100px;
 	height: 100px;
 	background: url(./images/loader.png);
-	animation: loader 1s infinite steps(8);
+	animation: loader 10s infinite steps(8);
 }
 
 /*44 闪烁效果*/
@@ -1330,7 +1434,7 @@ section#css-skills-47 div#css-skills-show-47-2 img{
 	position: static;
 	animation: spin 6s linear infinite reverse;
 }
-@keyframes spin2{/*from是none时to可以自动填补关键帧 不是none时 要根据from来对应填补*/
+@keyframes spin22{/*from是none时to可以自动填补关键帧 不是none时 要根据from来对应填补*/
 	 from{
 		transform:  translateY( calc(14.5em - 50px))
 					rotate(0turn) 
@@ -1346,7 +1450,7 @@ section#css-skills-47 div#css-skills-show-47-2 img{
 	}
 }
 section#css-skills-47 div#css-skills-show-47-3 img{
-	animation: spin2 6s linear infinite;
+	animation: spin22 6s linear infinite;
 }
 
 pre#css-skills-code-47-2{
@@ -1355,3 +1459,5 @@ pre#css-skills-code-47-2{
 pre#css-skills-code-47-1{
 	padding: 6.7em 1em;
 }
+
+/*媒体查询*/
